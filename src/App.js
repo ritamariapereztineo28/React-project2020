@@ -1,10 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
+import Search from './components/Search'
 import './App.css';
 
 function App() {
   return (
-   <div>Hello World !</div>
+   <div>
+   <Search/>
+   </div>
     );
 }
 
