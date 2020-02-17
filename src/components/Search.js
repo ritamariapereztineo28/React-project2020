@@ -1,23 +1,30 @@
-import React, {Component} from 'react';
-import '../App.css';
+import React, { Component } from "react";
+import "../App.css";
 
-class Search extends Component{
-    constructor(props){
-        super(props);
+class Search extends Component {
+    constructor(){
+        super();
+        this.state={
+            message:''
+        }
     }
-    ButtonClick() {
-        console.log('click of the button');
-      }
-    
-    render (){
-        return(
-            <div>
-            <input placeholder="Search movies"></input>
-            <button onClick={this.ButtonClick}> Search </button>
+  buttonClick = () => {
+    this.setState({
+        value: 'Button is pressed'
+    })
+    this.setState({
+        message: this.state.value
+    })
+  }
 
-
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div>
+        <input placeholder="Search movies"></input>
+        <h1>{this.state.message}</h1>
+        <button onClick={this.buttonClick}> Search </button>
+      </div>
+    );
+  }
 }
-export default Search
+export default Search;
