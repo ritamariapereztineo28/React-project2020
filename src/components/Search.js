@@ -19,9 +19,11 @@ class Search extends Component {
     return (
       <div>
         <input placeholder="Search movies"></input>
-        <h1>{this.state.message}</h1>
+        
         <button onClick={this.buttonClick}> Search </button>
+        <h1>{this.state.message}</h1>
       </div>
+      
     );
   }
 }
