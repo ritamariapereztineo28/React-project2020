@@ -10,8 +10,7 @@ class Search extends Component {
   }
   buttonClick = () => {
     this.setState({
-      value: "Button is pressed",
-      message: "message"
+      message: "Button is pressed"
     });
   };
 
