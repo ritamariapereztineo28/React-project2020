@@ -6,19 +6,28 @@ class Search extends Component {
     this.state = {
       message: ""
     };
+    this.handlerInput = this.handlerInput.bind(this)
+    this.buttonClick = this.buttonClick.bind(this)
   }
-  buttonClick = () => {
+  
+  handlerInput = (event) => {
+    const {name, value}= event.target
     this.setState({
-      message: "Search movies"
+      [name]: value
     });
   };
+  buttonClick = () => { 
+   return this.state.message
+  }
 
   render() {
     return (
       <div>
-        <input placeholder="Search movies"></input>
+        <form >
+        <input name="message" placeholder="Search movies" value={this.state.value} onChange={this.handlerInput} ></input>
         <button onClick={this.buttonClick}> Search </button>
         <h1>{this.state.message}</h1>
+        </form>
       </div>
       
     );
