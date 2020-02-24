@@ -1,0 +1,15 @@
+#form,p{
+    display: block;
+    margin:auto;
+    margin-left: 40%;
+    margin-top: 5%;
+
+}
+input{
+    width: 20%;
+    height: 2em;
+    margin-right: 1%;
+}
+button{    
+    height: 2em;
+}

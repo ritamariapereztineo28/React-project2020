@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import './Search_style.css';
 class Search extends Component {
   constructor() {
     super();
@@ -26,7 +26,7 @@ class Search extends Component {
   render() {
     return (
       <div>
-        <form>
+        <div id="form">
           <input
             name="message"
             placeholder="Search movies"
@@ -34,7 +34,7 @@ class Search extends Component {
             onChange={this.handlerInput}
           ></input>
           <button onClick={this.buttonClick}> Search </button>
-        </form>
+        </div>
         {this.state.showMessage && <p>{this.state.message}</p>}
 
       </div>
