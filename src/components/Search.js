@@ -5,7 +5,7 @@ class Search extends Component {
     super();
     this.state = {
       message: "",
-      showMessage: false
+      lastMessage: "",
     };
     this.handlerInput = this.handlerInput.bind(this);
     this.buttonClick = this.buttonClick.bind(this);
@@ -19,7 +19,7 @@ class Search extends Component {
   };
   buttonClick = () => {
     this.setState({
-      showMessage: true
+      lastMessage: this.state.message
     });
   };
 
@@ -34,7 +34,7 @@ class Search extends Component {
           ></input>
           <button onClick={this.buttonClick}> Search </button>
         </div>
-    {this.state.showMessage && <p>{this.state.message}</p>}
+    <p>{this.state.lastMessage}</p>
         </div>
     )
 }
