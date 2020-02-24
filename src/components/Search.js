@@ -19,7 +19,7 @@ class Search extends Component {
   };
   buttonClick = () => {
     this.setState({
-      showMessage: !this.state.showMessage
+      showMessage: true
     });
   };
 
@@ -30,16 +30,13 @@ class Search extends Component {
           <input
             name="message"
             placeholder="Search movies"
-            value={this.state.value}
             onChange={this.handlerInput}
           ></input>
           <button onClick={this.buttonClick}> Search </button>
         </div>
-        {this.state.showMessage && <p>{this.state.message}</p>}
-
-      </div>
-      
-    );
-  }
+    {this.state.showMessage && <p>{this.state.message}</p>}
+        </div>
+    )
+}
 }
 export default Search;
