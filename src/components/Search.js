@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import './Search_style.css';
+import "./Search_style.css";
 class Search extends Component {
   constructor() {
     super();
     this.state = {
       message: "",
-      lastMessage: "",
+      lastMessage: ""
     };
     this.handlerInput = this.handlerInput.bind(this);
     this.buttonClick = this.buttonClick.bind(this);
@@ -34,9 +34,9 @@ class Search extends Component {
           ></input>
           <button onClick={this.buttonClick}> Search </button>
         </div>
-    <p>{this.state.lastMessage}</p>
-        </div>
-    )
-}
+        <p>{this.state.lastMessage}</p>
+      </div>
+    );
+  }
 }
 export default Search;
