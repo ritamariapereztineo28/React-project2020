@@ -1,6 +1,8 @@
 import React from "react";
 import Search from "./components/Search";
+
 import Container from "./components/Container";
+
 import "./App.css";
 
 function App() {
@@ -8,6 +10,7 @@ function App() {
     <div>
       <Search />
       <Container />
+
     </div>
   );
 }
