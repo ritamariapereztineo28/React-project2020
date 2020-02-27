@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./Container_style.css";
-class Container extends Component {
+import "./MovieItem_style.css";
+class MovieItem extends Component {
   render() {
     return (
       <div id="container">
