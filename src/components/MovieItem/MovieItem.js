@@ -16,7 +16,8 @@ class MovieItem extends Component {
 
 MovieItem.propTypes = {
   title: PropTypes.string,
-  year: PropTypes.number
+  year: PropTypes.number,
+  imgUrl: PropTypes.any.isRequired
 };
 
 export default MovieItem;
