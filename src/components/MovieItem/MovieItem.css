@@ -1,4 +1,4 @@
-.container {
+.container-movieItem {
   width: 20%;
   margin-left: 2%;
   display: inline-block;
@@ -6,7 +6,7 @@
 img {
   width: 100%;
 }
-h1,
-h2 {
+.title,
+.year {
   text-align: center;
 }
