@@ -1,0 +1,12 @@
+.container {
+  width: 20%;
+  margin-left: 2%;
+  display: inline-block;
+}
+img {
+  width: 100%;
+}
+h1,
+h2 {
+  text-align: center;
+}
