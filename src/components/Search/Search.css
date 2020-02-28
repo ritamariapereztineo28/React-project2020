@@ -1,15 +1,17 @@
 .search-movie,
-.message {
+.search-movie .message {
   display: block;
   margin: auto;
   margin-left: 40%;
   margin-top: 5%;
 }
-.input-search {
+
+.search-movie .input-search {
   width: 20%;
   height: 2em;
   margin-right: 1%;
 }
-.btn-search {
+
+.search-movie .btn-search {
   height: 2em;
 }

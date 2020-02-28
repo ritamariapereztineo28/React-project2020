@@ -3,10 +3,12 @@
   margin-left: 2%;
   display: inline-block;
 }
-img {
+
+.container-movieItem img {
   width: 100%;
 }
-.title,
-.year {
+
+.container-movieItem .title-movie,
+.container-movieItem .year {
   text-align: center;
 }
