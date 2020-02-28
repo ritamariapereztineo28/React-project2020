@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import "./MovieItem.css";
 
 class MovieItem extends Component {
@@ -15,8 +15,8 @@ class MovieItem extends Component {
 }
 
 MovieItem.propTypes = {
-  title : PropTypes.string,
+  title: PropTypes.string,
   year: PropTypes.number
-}
+};
 
 export default MovieItem;
