@@ -1,0 +1,14 @@
+.container-movieItem {
+  width: 20%;
+  margin-left: 2%;
+  display: inline-block;
+}
+
+.container-movieItem img {
+  width: 100%;
+}
+
+.container-movieItem .title-movie,
+.container-movieItem .year {
+  text-align: center;
+}
