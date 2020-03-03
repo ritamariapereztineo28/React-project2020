@@ -9,6 +9,7 @@ class App extends React.Component {
     this.state = {
       results: []
     };
+
     this.searchInformation = this.searchInformation.bind(this);
   }
 
@@ -30,6 +31,7 @@ class App extends React.Component {
 
   render() {
     const { results, error } = this.state;
+    
     return (
       <div>
         <Search searchInfo={this.searchInformation} />
