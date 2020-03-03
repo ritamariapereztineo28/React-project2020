@@ -1,12 +1,18 @@
 .container-movieItem {
+<<<<<<< HEAD
   width: 15%;
   margin-left: 4%;
   margin-top: 5%;
+=======
+  width: 20%;
+  margin-left: 2%;
+>>>>>>> master
   display: inline-block;
 }
 
 .container-movieItem img {
   width: 100%;
+<<<<<<< HEAD
   height: 25em;
 }
 
@@ -18,4 +24,11 @@
 .container-movieItem .year {
   text-align: center;
   font-size: 100%;
+=======
+}
+
+.container-movieItem .title-movie,
+.container-movieItem .year {
+  text-align: center;
+>>>>>>> master
 }
