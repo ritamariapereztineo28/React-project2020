@@ -1,15 +1,14 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import "./Search.css";
 
 class Search extends Component {
-  constructor() {
-    super();
-    this.state = {
-      title: "",
-      year: "",
-      image: ""
-    };
-  }
+  state = {
+    title: "",
+    year: "",
+    image: ""
+  };
+
   handlerInput = event => {
     const { name, value } = event.target;
     this.setState({
@@ -38,5 +37,9 @@ class Search extends Component {
     );
   }
 }
+
+Search.propTypes = {
+  title: PropTypes.string
+};
 
 export default Search;

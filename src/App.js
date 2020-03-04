@@ -7,7 +7,8 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      results: []
+      results: [],
+      error: false
     };
     this.searchInformation = this.searchInformation.bind(this);
   }
@@ -34,19 +35,23 @@ class App extends React.Component {
       <div>
         <Search searchInfo={this.searchInformation} />
         {!error
-          ? results.map(movie => {
+          ? (
+            results.map(movie => {
               return (
                 <MovieItem
+                  key ={movie.i}
                   title={movie.Title}
                   year={movie.Year}
                   imgUrl={movie.Poster}
                 />
               );
             })
-          : null}
+          
+          ): null}
       </div>
     );
   }
 }
+
 
 export default App;
