@@ -1,7 +1,7 @@
+import "./App.css";
+import MovieItem from "./components/MovieItem";
 import React from "react";
 import Search from "./components/Search";
-import MovieItem from "./components/MovieItem";
-import "./App.css";
 
 class App extends React.Component {
   constructor() {
@@ -35,23 +35,20 @@ class App extends React.Component {
       <div>
         <Search searchInfo={this.searchInformation} />
         {!error
-          ? (
-            results.map(movie => {
+          ? results.map((movie, i) => {
               return (
                 <MovieItem
-                  key ={movie.i}
+                  key={i}
                   title={movie.Title}
                   year={movie.Year}
                   imgUrl={movie.Poster}
                 />
               );
             })
-          
-          ): null}
+          : null}
       </div>
     );
   }
 }
-
 
 export default App;

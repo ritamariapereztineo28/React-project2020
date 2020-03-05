@@ -1,14 +1,8 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
 import "./Search.css";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
 
 class Search extends Component {
-  state = {
-    title: "",
-    year: "",
-    image: ""
-  };
-
   handlerInput = event => {
     const { name, value } = event.target;
     this.setState({
@@ -39,7 +33,7 @@ class Search extends Component {
 }
 
 Search.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string,
 };
 
 export default Search;
