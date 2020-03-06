@@ -3,6 +3,10 @@ import PropTypes from "prop-types";
 import React, { Component } from "react";
 
 class Search extends Component {
+  state = {
+    title: ""
+  };
+
   handlerInput = event => {
     const { name, value } = event.target;
     this.setState({
@@ -33,7 +37,7 @@ class Search extends Component {
 }
 
 Search.propTypes = {
-  title: PropTypes.string,
+  searchInfo: PropTypes.func
 };
 
 export default Search;
