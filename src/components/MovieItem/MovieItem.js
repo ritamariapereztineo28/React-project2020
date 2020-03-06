@@ -15,6 +15,7 @@ class MovieItem extends Component {
 }
 
 MovieItem.propTypes = {
+  id: PropTypes.number,
   title: PropTypes.string,
   year: PropTypes.string,
   imgUrl: PropTypes.any.isRequired
