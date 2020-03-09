@@ -34,7 +34,7 @@ class App extends React.Component {
     return (
       <div>
         <Search searchInfo={this.searchInformation} />
-        {!error
+        {!error && !!results 
           ? results.map((movie, i) => {
               return (
                 <MovieItem
