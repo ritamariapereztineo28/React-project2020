@@ -2,6 +2,13 @@ import "./App.css";
 import MovieItem from "./components/MovieItem";
 import React from "react";
 import Search from "./components/Search";
+import DataMovie from "./components/DataMovie";
+import {
+  Switch,
+  Route,
+  Link,
+  BrowserRouter as Router,
+} from "react-router-dom";
 
 class App extends React.Component {
   constructor() {
@@ -32,22 +39,34 @@ class App extends React.Component {
   render() {
     const { results, error } = this.state;
     return (
+    <Router>
       <div>
+      <Switch>
+          <Route exact path="/">
+           
         <Search searchInfo={this.searchInformation} />
-        {!error && !!results 
+        {!error && !!results
           ? results.map((movie, i) => {
               return (
-                <MovieItem
-                  key={i}
-                  title={movie.Title}
-                  year={movie.Year}
-                  imgUrl={movie.Poster}
-                />
+                <Link to="/coco">
+                  <MovieItem
+                    key={i}
+                    title={movie.Title}
+                    year={movie.Year}
+                    imgUrl={movie.Poster}
+                  />
+                </Link>
               );
             })
           : null}
+          </Route>
+          <Route path="/coco">
+            <DataMovie/>
+          </Route>
+        </Switch>
       </div>
-    );
+    </Router>
+  );
   }
 }
 

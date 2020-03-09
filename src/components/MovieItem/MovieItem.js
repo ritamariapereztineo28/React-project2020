@@ -7,10 +7,11 @@ class MovieItem extends Component {
     return (
       <div className="container-movieItem" key={this.props.id}>
         <h1 className="title-movie">{this.props.title}</h1>
-        <img src={this.props.imgUrl} alt="imagen" />
+          <img src={this.props.imgUrl} alt="imagen" />
         <h2 className="year">{this.props.year}</h2>
       </div>
     );
+   
   }
 }
 
