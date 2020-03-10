@@ -18,6 +18,7 @@ class App extends React.Component {
   searchInformation(search) {
     var key = "3c255e54";
     var url = `http://www.omdbapi.com/?s=${search}&apikey=${key}`;
+
     fetch(url)
       .then(Response => {
         return Response.json();
@@ -42,7 +43,15 @@ class App extends React.Component {
               {!error && !!results
                 ? results.map((movie, i) => {
                     return (
-                      <Link to="/coco">
+                      <Link
+                        to={{
+                          pathname: "/DataMovie",
+                          state: {
+                            title: movie.Title,
+                            img: movie.Poster
+                          }
+                        }}
+                      >
                         <MovieItem
                           key={i}
                           title={movie.Title}
@@ -53,10 +62,12 @@ class App extends React.Component {
                     );
                   })
                 : null}
+              ,
             </Route>
-            <Route path="/coco">
-              <DataMovie />
-            </Route>
+            <Route
+              path="/DataMovie"
+              render={props => <DataMovie {...props} />}
+            />
           </Switch>
         </div>
       </Router>

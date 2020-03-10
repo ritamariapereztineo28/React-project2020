@@ -3,11 +3,16 @@ import "./DataMovie.css";
 
 class DataMovie extends Component {
   render() {
+    const {title, img} = this.props.location.state
     return (
       <div className="data-movie">
-        <h1 className="title-movie">Title</h1>
-        <img className="image-movie" src="https://lumiere-a.akamaihd.net/v1/images/homepage_hero_mobile_insideout_streetmessageupdate_span_0aea4bd0.jpeg?region=0%2C0%2C480%2C750" />
-          <p className=".review-movie">-----</p>
+        <h1 className="title-movie">{title}</h1>
+        <img
+          className="image-movie"
+          src={img}
+        />
+        
+        <p className=".review-movie">----</p>
       </div>
     );
   }
