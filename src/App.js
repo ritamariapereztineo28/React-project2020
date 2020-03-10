@@ -27,7 +27,8 @@ class App extends React.Component {
         this.setState({
           results: jsonInfo.Search,
           error: false
-        });
+        })
+        
       })
       .catch(() => this.setState({ error: true }));
   }
@@ -43,17 +44,16 @@ class App extends React.Component {
               {!error && !!results
                 ? results.map((movie, i) => {
                     return (
-                      <Link
+                      <Link key={i}
                         to={{
                           pathname: "/DataMovie",
                           state: {
                             title: movie.Title,
-                            img: movie.Poster
+                            img: movie.Poster,
                           }
                         }}
                       >
                         <MovieItem
-                          key={i}
                           title={movie.Title}
                           year={movie.Year}
                           imgUrl={movie.Poster}
