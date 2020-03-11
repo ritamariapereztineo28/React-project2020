@@ -13,9 +13,11 @@
 .container-movieItem .title-movie {
   text-align: center;
   font-size: 1.5em;
+  color: black 
 }
 
 .container-movieItem .year {
   text-align: center;
+  color: black;
   font-size: 1em;
 }
