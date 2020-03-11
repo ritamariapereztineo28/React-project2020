@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./DataMovie.css";
+import PropsType from "prop-types";
 
 class DataMovie extends Component {
   state = {
@@ -9,7 +10,7 @@ class DataMovie extends Component {
     runtime: ""
   };
 
-  MovieInformation() {
+  movieInformation() {
     const { title, img } = this.props.location.state;
     var key = "3c255e54";
     var url = `http://www.omdbapi.com/?t=${title}&apikey=${key}`;
@@ -36,7 +37,7 @@ class DataMovie extends Component {
         <h1 className="title-movie">{title}</h1>
         <div className="general-data-movie">
           <img className="image-movie" src={img} />
-          {this.MovieInformation()}
+          {this.movieInformation()}
 
           <p className="review-movie">
             Review: <br />
@@ -53,5 +54,12 @@ class DataMovie extends Component {
     );
   }
 }
+
+DataMovie.propsType = {
+  actors: PropsType.string,
+  plot: PropsType.string,
+  director: PropsType.string,
+  runtime: PropsType.string
+};
 
 export default DataMovie;

@@ -44,7 +44,7 @@ class App extends React.Component {
                 ? results.map((movie, i) => {
                     return (
                       <Link
-                        key={i}
+                        key={movie.i}
                         to={{
                           pathname: "/DataMovie",
                           state: {
