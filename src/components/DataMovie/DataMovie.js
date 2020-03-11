@@ -32,15 +32,23 @@ class DataMovie extends Component {
   render() {
     const { title, img } = this.props.location.state;
     return (
-      <div className="data-movie">
-        {this.MovieInformation()}
+      <div className="info-movie">
         <h1 className="title-movie">{title}</h1>
-        <img className="image-movie" src={img} />
+        <div className="general-data-movie">
+          <img className="image-movie" src={img} />
+          {this.MovieInformation()}
 
-        <p className="director-movie">{this.state.director}</p>
-        <p className="runtime-movie">{this.state.runtime}</p>
-        <p className="actors-movie">{this.state.actors}</p>
-        <p className="review-movie">{this.state.plot}</p>
+          <p className="review-movie">
+            Review: <br />
+            {this.state.plot}
+          </p>
+
+          <div className="data-movie">
+            <p className="director-movie">Director: {this.state.director}</p>
+            <p className="runtime-movie">Runtime: {this.state.runtime}</p>
+            <p className="actors-movie">Actors: {this.state.actors}</p>
+          </div>
+        </div>
       </div>
     );
   }
