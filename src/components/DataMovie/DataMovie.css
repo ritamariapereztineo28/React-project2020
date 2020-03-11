@@ -23,9 +23,11 @@
   transition: all;
   transition-duration: 0.9s;
 }
+
 .image-movie:hover {
   opacity: 0.8;
 }
+
 .general-data-movie .review-movie {
   text-align: center;
   margin: auto;
