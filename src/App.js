@@ -4,33 +4,27 @@ import React from "react";
 import Search from "./components/Search";
 import DataMovie from "./components/DataMovie";
 import { Switch, Route, Link, BrowserRouter as Router } from "react-router-dom";
+import { containerInformation } from "./functions";
 
 class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      results: [],
-      error: false
-    };
-    this.searchInformation = this.searchInformation.bind(this);
-  }
+  state = {
+    results: [],
+    error: false
+  };
 
-  searchInformation(search) {
-    var key = "3c255e54";
-    var url = `http://www.omdbapi.com/?s=${search}&apikey=${key}`;
-
-    fetch(url)
-      .then(Response => {
-        return Response.json();
-      })
+  searchInformation = search =>
+    containerInformation(search, "s")
       .then(jsonInfo => {
         this.setState({
           results: jsonInfo.Search,
           error: false
         });
       })
-      .catch(() => this.setState({ error: true }));
-  }
+      .catch(() =>
+        this.setState({
+          error: true
+        })
+      );
 
   render() {
     const { results, error } = this.state;
