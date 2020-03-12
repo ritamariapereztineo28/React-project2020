@@ -41,10 +41,10 @@ class App extends React.Component {
             <Route exact path="/">
               <Search searchInfo={this.searchInformation} />
               {!error && !!results
-                ? results.map((movie, i) => {
+                ? results.map(movie => {
                     return (
                       <Link
-                        key={movie.i}
+                        key={movie.imdbID}
                         to={{
                           pathname: "/DataMovie",
                           state: {
