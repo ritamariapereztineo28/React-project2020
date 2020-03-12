@@ -11,7 +11,8 @@ class DataMovie extends Component {
     runtime: ""
   };
 
-  movieInformation = title => {
+  componentDidMount() {
+    const { title } = this.props.location.state;
     containerInformation(title, "t").then(jsonInfo => {
       this.setState({
         actors: jsonInfo.Actors,
@@ -20,16 +21,15 @@ class DataMovie extends Component {
         runtime: jsonInfo.Runtime
       });
     });
-  };
+  }
 
   render() {
-    const { title, img } = this.props.location.state;
-    return (
+    const { title, img, error } = this.props.location.state;
+    return !error ? (
       <div className="info-movie">
         <h1 className="title-movie">{title}</h1>
         <div className="general-data-movie">
           <img className="image-movie" src={img} />
-          {this.movieInformation(title)}
 
           <p className="review-movie">
             Review: <br />
@@ -43,13 +43,16 @@ class DataMovie extends Component {
           </div>
         </div>
       </div>
-    );
+    ) : null;
   }
 }
 
 DataMovie.propsType = {
-  title: PropsType.string,
-  img: PropsType.string
+  location: PropsType.shape({
+    title: PropsType.string,
+    img: PropsType.string,
+    error: PropsType.string
+  })
 };
 
 export default DataMovie;

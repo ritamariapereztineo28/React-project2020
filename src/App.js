@@ -13,18 +13,12 @@ class App extends React.Component {
   };
 
   searchInformation = search =>
-    containerInformation(search, "s")
-      .then(jsonInfo => {
-        this.setState({
-          results: jsonInfo.Search,
-          error: false
-        });
-      })
-      .catch(() =>
-        this.setState({
-          error: true
-        })
-      );
+    containerInformation(search, "s").then(jsonInfo => {
+      this.setState({
+        results: jsonInfo.Search,
+        error: false
+      });
+    });
 
   render() {
     const { results, error } = this.state;
