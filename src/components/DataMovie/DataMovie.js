@@ -56,10 +56,8 @@ class DataMovie extends Component {
 }
 
 DataMovie.propsType = {
-  actors: PropsType.string,
-  plot: PropsType.string,
-  director: PropsType.string,
-  runtime: PropsType.string
+  title: PropsType.string,
+  img: PropsType.string
 };
 
 export default DataMovie;
