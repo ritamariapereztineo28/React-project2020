@@ -4,5 +4,11 @@
 }
 .message-error {
   text-align: center;
-  font-size: 1em;
+  padding-right: 9em;
+  font-size: 0.9em;
+}
+.image-error {
+  width: 20%;
+  margin: 1em;
+  display: block;
 }
