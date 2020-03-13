@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./DataMovie.css";
 import PropsType from "prop-types";
+import "./DataMovie.css";
 import { containerInformation } from "../../functions";
 
 class DataMovie extends Component {

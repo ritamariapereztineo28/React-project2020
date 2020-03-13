@@ -1,6 +1,6 @@
-import "./MovieItem.css";
-import PropTypes from "prop-types";
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import "./MovieItem.css";
 
 class MovieItem extends Component {
   render() {

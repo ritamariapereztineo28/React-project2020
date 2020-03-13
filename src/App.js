@@ -1,10 +1,10 @@
-import "./App.css";
-import MovieItem from "./components/MovieItem";
 import React from "react";
-import Search from "./components/Search";
-import DataMovie from "./components/DataMovie";
 import { Switch, Route, Link, BrowserRouter as Router } from "react-router-dom";
+import "./App.css";
 import { containerInformation } from "./functions";
+import DataMovie from "./components/DataMovie";
+import MovieItem from "./components/MovieItem";
+import Search from "./components/Search";
 
 class App extends React.Component {
   state = {
@@ -29,28 +29,30 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/">
               <Search searchInfo={this.searchInformation} />
-              {!error && !!results
-                ? results.map(movie => {
-                    return (
-                      <Link
-                        key={movie.imdbID}
-                        to={{
-                          pathname: "/DataMovie",
-                          state: {
-                            title: movie.Title,
-                            img: movie.Poster
-                          }
-                        }}
-                      >
-                        <MovieItem
-                          title={movie.Title}
-                          year={movie.Year}
-                          imgUrl={movie.Poster}
-                        />
-                      </Link>
-                    );
-                  })
-                : <h1 className="message-error">{message}</h1>}
+              {!error && !!results ? (
+                results.map(movie => {
+                  return (
+                    <Link
+                      key={movie.imdbID}
+                      to={{
+                        pathname: "/DataMovie",
+                        state: {
+                          title: movie.Title,
+                          img: movie.Poster
+                        }
+                      }}
+                    >
+                      <MovieItem
+                        title={movie.Title}
+                        year={movie.Year}
+                        imgUrl={movie.Poster}
+                      />
+                    </Link>
+                  );
+                })
+              ) : (
+                <h1 className="message-error">{message}</h1>
+              )}
               ,
             </Route>
             <Route
