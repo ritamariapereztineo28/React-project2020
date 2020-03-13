@@ -1,6 +1,6 @@
-import "./Search.css";
-import PropTypes from "prop-types";
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import "./Search.css";
 
 class Search extends Component {
   state = {
@@ -15,6 +15,7 @@ class Search extends Component {
   };
 
   render() {
+    const { title } = this.state;
     return (
       <div>
         <div className="search-movie">
@@ -26,7 +27,7 @@ class Search extends Component {
           ></input>
           <button
             className="btn-search"
-            onClick={() => this.props.searchInfo(this.state.title)}
+            onClick={() => this.props.searchInfo(title)}
           >
             Search
           </button>

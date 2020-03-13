@@ -9,7 +9,8 @@ import { containerInformation } from "./functions";
 class App extends React.Component {
   state = {
     results: [],
-    error: false
+    error: false,
+    message: "Algo esta mal"
   };
 
   searchInformation = search =>
@@ -21,7 +22,7 @@ class App extends React.Component {
     });
 
   render() {
-    const { results, error } = this.state;
+    const { results, error, message } = this.state;
     return (
       <Router>
         <div>
@@ -49,7 +50,7 @@ class App extends React.Component {
                       </Link>
                     );
                   })
-                : null}
+                : <h1 className="message-error">{message}</h1>}
               ,
             </Route>
             <Route
