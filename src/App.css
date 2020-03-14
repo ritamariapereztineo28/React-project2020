@@ -2,11 +2,15 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+body {
+  background-color: rgb(255, 249, 225);
+}
 .message-error {
   text-align: center;
   padding-right: 9em;
   font-size: 0.9em;
 }
+
 .image-error {
   width: 20%;
   margin: 1em;

@@ -1,47 +1,69 @@
 .info-movie {
-  width: 99%;
-  margin-top: 2%;
-  padding: 0.5%;
+  width: 100%;
+  margin-top: 1em;
   text-align: center;
   margin: auto;
 }
 
 .info-movie .general-data-movie {
   display: flex;
-  background-color: #e3c7c1;
+  background-color: rgb(219, 167, 141);
+  margin-bottom: 5em;
 }
 
 .info-movie .title-movie {
   text-align: center;
   font-size: 5em;
+  padding-bottom: 0.2em;
+  transition: all;
+  transition-duration: 1s;
+}
+
+.title-movie:hover {
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .image-movie {
-  width: 25em;
-  height: 30em;
-  margin: 1%;
+  width: 25%;
+  height: auto;
+  margin: 1em;
+  margin-top: -3em;
   transition: all;
   transition-duration: 0.9s;
 }
 
 .image-movie:hover {
+  width: 26%;
+  height: auto;
   opacity: 0.8;
+  margin-top: -5em;
+  margin-bottom: 2em;
 }
 
 .general-data-movie .review-movie {
+  width: 40%;
+  padding: 1em;
   text-align: center;
-  margin: auto;
+  margin: 1em;
   line-height: 2em;
   font-size: 1.5em;
 }
 
 .data-movie {
-  width: 40%;
-  margin-left: 0.9%;
+  width: 30%;
+  margin-left: 0.9em;
   padding-top: 4em;
-  background-color: rgb(238, 217, 212);
+  background-color: rgb(253, 211, 176);
   text-align: center;
-  padding-left: 1%;
-  padding-right: 1%;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 2em;
   font-size: 1.5em;
+  transition: all;
+  transition-duration: 1s;
+}
+
+.data-movie:hover {
+  width: 40%;
 }
