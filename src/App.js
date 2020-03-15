@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, Link, BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
-import { containerInformation } from "./functions";
+import { containerInformation } from "./utils/functions";
 import DataMovie from "./components/DataMovie";
 import MovieItem from "./components/MovieItem";
 import Search from "./components/Search";
