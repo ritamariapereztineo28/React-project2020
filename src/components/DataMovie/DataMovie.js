@@ -13,6 +13,7 @@ class DataMovie extends Component {
 
   componentDidMount() {
     const { title } = this.props.location.state;
+    console.log(title);
     containerInformation(title, "t").then(jsonInfo => {
       this.setState({
         actors: jsonInfo.Actors,

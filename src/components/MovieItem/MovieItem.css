@@ -1,10 +1,12 @@
 .container-movieItem {
-  width: 20%;
-  margin-left: 0.5em;
+  width: 18em;
+  margin-left: 2em;
   margin-top: 3em;
   margin-right: 0.5em;
   padding: 1em;
   display: inline-block;
+  transition: all;
+  transition-duration: 1s;
 }
 
 .container-movieItem img {
@@ -16,8 +18,9 @@
 }
 
 img:hover {
+  margin-left: -1em;
   opacity: 0.7;
-  width: 22em;
+  width: 20em;
   height: 26em;
 }
 

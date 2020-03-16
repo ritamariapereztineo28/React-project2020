@@ -1,5 +1,5 @@
 .info-movie {
-  width: 100%;
+  width: 99.9%;
   margin-top: 1em;
   text-align: center;
   margin: auto;
@@ -14,7 +14,7 @@
 .info-movie .title-movie {
   text-align: center;
   font-size: 5em;
-  padding-bottom: 0.2em;
+  padding-bottom: 1em;
   transition: all;
   transition-duration: 1s;
 }
@@ -25,20 +25,22 @@
 }
 
 .image-movie {
-  width: 25%;
+  width: 20%;
   height: auto;
   margin: 1em;
+  margin-left: 2em;
   margin-top: -3em;
   transition: all;
   transition-duration: 0.9s;
 }
 
 .image-movie:hover {
-  width: 26%;
+  width: 22%;
   height: auto;
   opacity: 0.8;
   margin-top: -5em;
   margin-bottom: 2em;
+  margin-left: 3em;
 }
 
 .general-data-movie .review-movie {
