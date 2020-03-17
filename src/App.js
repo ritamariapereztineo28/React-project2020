@@ -1,13 +1,13 @@
 //Native Component
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
 //Component
-import Routes from './components/Router/Route';
+import Router from "./components/Router/Router";
 function App() {
   return (
     <BrowserRouter>
       <div>
-        <Routes />
+        <Router />
       </div>
     </BrowserRouter>
   );
