@@ -2,7 +2,7 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 //Component
-import Routes from "./components/Router/Route";
+import Routes from "./components/Router/Router";
 function App() {
   return (
     <BrowserRouter>
