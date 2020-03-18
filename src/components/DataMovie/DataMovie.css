@@ -1,5 +1,5 @@
 .info-movie {
-  width: 99.9%;
+  width: 80%;
   margin-top: 1em;
   text-align: center;
   margin: auto;
@@ -7,7 +7,7 @@
 
 .info-movie .general-data-movie {
   display: flex;
-  background-color: rgb(219, 167, 141);
+  background-color: rgb(255, 255, 255);
   margin-bottom: 5em;
 }
 
@@ -49,14 +49,15 @@
   text-align: center;
   margin: 1em;
   line-height: 2em;
-  font-size: 1.5em;
+  font-size: 1.5em;border: white;
+  border-radius: 12em;
 }
 
 .data-movie {
   width: 30%;
   margin-left: 0.9em;
   padding-top: 4em;
-  background-color: rgb(253, 211, 176);
+  background-color: rgb(234, 248, 247);
   text-align: center;
   padding-left: 1em;
   padding-right: 1em;
@@ -64,6 +65,7 @@
   font-size: 1.5em;
   transition: all;
   transition-duration: 1s;
+  color: #000;
 }
 
 .data-movie:hover {

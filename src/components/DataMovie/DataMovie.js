@@ -30,7 +30,7 @@ class DataMovie extends Component {
       <div className="info-movie">
         <h1 className="title-movie">{title}</h1>
         <div className="general-data-movie">
-          <img className="image-movie" src={img} />
+          <img className="image-movie" src={img} alt="img" />
 
           <p className="review-movie">
             Review: <br />
@@ -44,7 +44,9 @@ class DataMovie extends Component {
           </div>
         </div>
       </div>
-    ) : null;
+    ) : (
+      <h1>A ocurrido un error ...</h1>
+    );
   }
 }
 

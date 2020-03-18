@@ -18,6 +18,7 @@ class Search extends Component {
     const { title } = this.state;
     return (
       <div>
+        <div className="header" />
         <div className="search-movie">
           <input
             className="input-search"
