@@ -5,5 +5,5 @@ export function containerInformation(search, i) {
     .then(response => {
       return response.json();
     })
-    .catch(e => console.log(`Error ${e}`));
+    .catch(e => console.error(`Error ${e}`));
 }

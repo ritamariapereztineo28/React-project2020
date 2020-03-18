@@ -8,7 +8,7 @@ import "./Home.css";
 class Home extends React.Component {
   state = {
     results: [],
-    error: false,
+    error: "",
     message: "Algo esta mal"
   };
 
@@ -16,7 +16,7 @@ class Home extends React.Component {
     containerInformation(search, "s").then(jsonInfo => {
       this.setState({
         results: jsonInfo.Search,
-        error: false
+        error: ""
       });
     });
 
