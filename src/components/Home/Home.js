@@ -51,7 +51,7 @@ class Home extends React.Component {
         </div>
       </div>
     ) : (
-      <h2>Ha ocurrido un error ...</h2>
+      <h2 className="message-error">Ha ocurrido un error ...</h2>
     );
   }
 }
