@@ -7,3 +7,4 @@ export function containerInformation(search, i) {
     })
     .catch(e => console.error(`Error ${e}`));
 }
+

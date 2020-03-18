@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { containerInformation } from "../../utils/functions";
+import { containerInformation } from "../../utils/containerInformation";
 import MovieItem from "../MovieItem";
 import Search from "../Search";
 import "./Home.css";

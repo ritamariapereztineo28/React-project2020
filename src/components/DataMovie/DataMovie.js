@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropsType from "prop-types";
 import "./DataMovie.css";
-import { containerInformation } from "../../utils/functions";
+import { containerInformation } from "../../utils/containerInformation";
 
 class DataMovie extends Component {
   state = {
