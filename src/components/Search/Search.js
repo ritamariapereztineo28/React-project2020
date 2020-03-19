@@ -8,9 +8,9 @@ class Search extends Component {
   };
 
   handlerInput = event => {
-    const { name, value } = event.target;
+    const { value } = event.target;
     this.setState({
-      [name]: value
+      title: value
     });
   };
 
@@ -22,7 +22,6 @@ class Search extends Component {
         <div className="search-movie">
           <input
             className="input-search"
-            name="title"
             placeholder="Search movies"
             onChange={this.handlerInput}
           ></input>

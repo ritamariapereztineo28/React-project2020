@@ -5,6 +5,4 @@ export function containerInformation(search, i) {
     .then(response => {
       return response.json();
     })
-    .catch(e => console.error(`Error ${e}`));
 }
-

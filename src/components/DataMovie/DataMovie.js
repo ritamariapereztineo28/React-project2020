@@ -8,44 +8,69 @@ class DataMovie extends Component {
     actors: "",
     plot: "",
     director: "",
-    runtime: ""
+    runtime: "",
+    error: "",
+    loading: true
   };
 
   componentDidMount() {
-    const { title } = this.props.location.state;
-    console.log(title);
-    containerInformation(title, "t").then(jsonInfo => {
-      this.setState({
-        actors: jsonInfo.Actors,
-        plot: jsonInfo.Plot,
-        director: jsonInfo.Director,
-        runtime: jsonInfo.Runtime
+    const { title } = this.props;
+    const { loading } = this.state;
+    containerInformation(title, "t")
+      .then(jsonInfo => {
+        if (!loading) {
+          this.setState({
+            error: "Algo anda mal"
+          });
+        }
+        this.setState({
+          actors: jsonInfo.Actors,
+          plot: jsonInfo.Plot,
+          director: jsonInfo.Director,
+          runtime: jsonInfo.Runtime,
+          error: "",
+          loading: true
+        });
+      })
+      .catch(e => {
+        this.setState({
+          error: e.message
+        });
       });
-    });
   }
 
   render() {
-    const { title, img, error } = this.props.location.state;
-    return !error ? (
-      <div className="info-movie">
-        <h1 className="title-movie">{title}</h1>
-        <div className="general-data-movie">
-          <img className="image-movie" src={img} alt="img" />
+    const { title, img } = this.props;
+    const error = this.state;
 
-          <p className="review-movie">
-            Review: <br />
-            {this.state.plot}
-          </p>
+    return !error ? (
+      <h1 className="message-error">{error}</h1>
+    ) : (
+      <div className="info-movie">
+        {title && <h1 className="title-movie">{title}</h1>}
+        <div className="general-data-movie">
+          {img && <img className="image-movie" src={img} alt="img" />}
+
+          {this.state.plot && (
+            <p className="review-movie">
+              Review: <br />
+              {this.state.plot}
+            </p>
+          )}
 
           <div className="data-movie">
-            <p className="director-movie">Director: {this.state.director}</p>
-            <p className="runtime-movie">Runtime: {this.state.runtime}</p>
-            <p className="actors-movie">Actors: {this.state.actors}</p>
+            {this.state.director && (
+              <p className="director-movie">Director: {this.state.director}</p>
+            )}
+            {this.state.runtime && (
+              <p className="runtime-movie">Runtime: {this.state.runtime}</p>
+            )}
+            {this.state.actors && (
+              <p className="actors-movie">Actors: {this.state.actors}</p>
+            )}
           </div>
         </div>
       </div>
-    ) : (
-      <h1>A ocurrido un error ...</h1>
     );
   }
 }

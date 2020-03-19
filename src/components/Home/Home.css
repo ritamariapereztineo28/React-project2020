@@ -2,9 +2,11 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+
 body {
   background-color: rgb(218, 236, 235);
 }
+
 .content-movie {
   margin-top: 10em;
   background-color: aliceblue;

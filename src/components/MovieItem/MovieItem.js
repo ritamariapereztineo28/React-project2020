@@ -4,11 +4,12 @@ import "./MovieItem.css";
 
 class MovieItem extends Component {
   render() {
+    const { id, title, imgUrl, year} = this.props;
     return (
-      <div className="container-movieItem" key={this.props.id}>
-        <h1 className="title-movie">{this.props.title}</h1>
-        <img src={this.props.imgUrl} alt="imagen" />
-        <h2 className="year">{this.props.year}</h2>
+      <div className="container-movieItem" key={id}>
+        {title && <h1 className="title-movie">{title}</h1>}
+        {imgUrl && <img src={imgUrl} alt="imagen" />}
+        {year && <h2 className="year">{year}</h2>}
       </div>
     );
   }
