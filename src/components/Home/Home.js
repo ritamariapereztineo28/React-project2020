@@ -12,10 +12,11 @@ class Home extends React.Component {
   searchInformation = search =>
     containerInformation(search, "s")
       .then(jsonInfo => {
-        if (!!jsonInfo.Search.length) {
+        if (jsonInfo.Search.length === 0) {
           this.setState({
             error: "No se ha encontrado ningun resultados"
           });
+          return;
         }
         this.setState({
           results: jsonInfo.Search,

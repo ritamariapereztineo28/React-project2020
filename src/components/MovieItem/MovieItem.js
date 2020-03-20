@@ -7,9 +7,9 @@ class MovieItem extends Component {
     const { id, title, imgUrl, year} = this.props;
     return (
       <div className="container-movieItem" key={id}>
-        {title && <h1 className="title-movie">{title}</h1>}
-        {imgUrl && <img src={imgUrl} alt="imagen" />}
-        {year && <h2 className="year">{year}</h2>}
+        <h1 className="title-movie">{title}</h1>
+        <img src={imgUrl} alt="imagen" />
+        <h2 className="year">{year}</h2>
       </div>
     );
   }

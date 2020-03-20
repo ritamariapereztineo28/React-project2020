@@ -10,20 +10,13 @@ class DataMovie extends Component {
     director: "",
     runtime: "",
     error: "",
-    loading: true
   };
 
   componentDidMount() {
     const { title } = this.props;
-    const { loading } = this.state;
     containerInformation(title, "t")
       .then(jsonInfo => {
-        if (!loading) {
-          this.setState({
-            error: "Algo anda mal"
-          });
-        }
-        this.setState({
+      this.setState({
           actors: jsonInfo.Actors,
           plot: jsonInfo.Plot,
           director: jsonInfo.Director,
@@ -47,9 +40,9 @@ class DataMovie extends Component {
       <h1 className="message-error">{error}</h1>
     ) : (
       <div className="info-movie">
-        {title && <h1 className="title-movie">{title}</h1>}
+        <h1 className="title-movie">{title}</h1>
         <div className="general-data-movie">
-          {img && <img className="image-movie" src={img} alt="img" />}
+          <img className="image-movie" src={img} alt="img" />
 
           {this.state.plot && (
             <p className="review-movie">
