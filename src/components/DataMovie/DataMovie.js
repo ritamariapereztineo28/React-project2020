@@ -10,7 +10,8 @@ class DataMovie extends Component {
     plot: "",
     director: "",
     runtime: "",
-    loading: true
+    error: "",
+    loading: false
   };
 
   componentDidMount() {
@@ -22,28 +23,36 @@ class DataMovie extends Component {
           plot: jsonInfo.Plot,
           director: jsonInfo.Director,
           runtime: jsonInfo.Runtime,
-          loading: true
+          error: "",
+          loading: false
         });
       })
-      .catch(() => {
+      .catch(e => {
         this.setState({
-          loading: false
+          loading: true,
+          error: e.message
         });
       });
   }
 
   render() {
     const { title, img } = this.props;
-    const loading = this.state;
-    return !loading ? (
-      <div className="message-loading">
-        <ReactLoading
-          type={"spokes"}
-          color={"#000"}
-          width={"20%"}
-        ></ReactLoading>
-      </div>
-    ) : (
+    const { loading, error } = this.state;
+    if (loading) {
+      return (
+        <div className="message-loading">
+          <ReactLoading
+            type={"spokes"}
+            color={"#000"}
+            width={"20%"}
+          ></ReactLoading>
+        </div>
+      );
+    }
+    if (error) {
+      return <div className="message-error">{error}</div>;
+    }
+    return (
       <div className="info-movie">
         <h1 className="title-movie">{title}</h1>
         <div className="general-data-movie">
