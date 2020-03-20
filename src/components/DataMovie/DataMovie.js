@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropsType from "prop-types";
 import "./DataMovie.css";
 import { containerInformation } from "../../utils/containerInformation";
+import ReactLoading from "react-loading";
 
 class DataMovie extends Component {
   state = {
@@ -9,35 +10,39 @@ class DataMovie extends Component {
     plot: "",
     director: "",
     runtime: "",
-    error: "",
+    loading: true
   };
 
   componentDidMount() {
     const { title } = this.props;
     containerInformation(title, "t")
       .then(jsonInfo => {
-      this.setState({
+        this.setState({
           actors: jsonInfo.Actors,
           plot: jsonInfo.Plot,
           director: jsonInfo.Director,
           runtime: jsonInfo.Runtime,
-          error: "",
           loading: true
         });
       })
-      .catch(e => {
+      .catch(() => {
         this.setState({
-          error: e.message
+          loading: false
         });
       });
   }
 
   render() {
     const { title, img } = this.props;
-    const error = this.state;
-
-    return !error ? (
-      <h1 className="message-error">{error}</h1>
+    const loading = this.state;
+    return !loading ? (
+      <div className="message-loading">
+        <ReactLoading
+          type={"spokes"}
+          color={"#000"}
+          width={"20%"}
+        ></ReactLoading>
+      </div>
     ) : (
       <div className="info-movie">
         <h1 className="title-movie">{title}</h1>
