@@ -11,7 +11,7 @@ class DataMovie extends Component {
     director: "",
     runtime: "",
     error: "",
-    loading: false
+    loading: true
   };
 
   componentDidMount() {
@@ -24,12 +24,12 @@ class DataMovie extends Component {
           director: jsonInfo.Director,
           runtime: jsonInfo.Runtime,
           error: "",
-          loading: false
+          loading: true
         });
       })
       .catch(e => {
         this.setState({
-          loading: true,
+          loading: false,
           error: e.message
         });
       });
@@ -38,7 +38,7 @@ class DataMovie extends Component {
   render() {
     const { title, img } = this.props;
     const { loading, error } = this.state;
-    if (loading) {
+    if (!loading) {
       return (
         <div className="message-loading">
           <ReactLoading
@@ -85,8 +85,7 @@ class DataMovie extends Component {
 DataMovie.propsType = {
   location: PropsType.shape({
     title: PropsType.string,
-    img: PropsType.string,
-    error: PropsType.string
+    img: PropsType.string
   })
 };
 
