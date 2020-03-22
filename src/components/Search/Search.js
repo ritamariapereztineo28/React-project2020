@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./Search.css";
+import { FaSearch } from "react-icons/fa";
 
 class Search extends Component {
   state = {
@@ -25,11 +26,12 @@ class Search extends Component {
             placeholder="Search movies"
             onChange={this.handlerInput}
           ></input>
+
           <button
             className="btn-search"
             onClick={() => this.props.searchInfo(title)}
           >
-            Search
+            <FaSearch size={"2em"} />
           </button>
         </div>
       </div>

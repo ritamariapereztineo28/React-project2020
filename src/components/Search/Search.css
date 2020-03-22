@@ -15,8 +15,9 @@
 }
 
 .search-movie .btn-search {
-  width: 7em;
+  width: 5em;
+  padding-top: 0.7em;
+  padding-bottom: 3.7em;
   border-radius: 1em;
-  margin: 0.5em;
   height: 4em;
 }
