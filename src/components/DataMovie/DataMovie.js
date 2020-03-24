@@ -83,10 +83,8 @@ class DataMovie extends Component {
 }
 
 DataMovie.propsType = {
-  location: PropsType.shape({
-    title: PropsType.string,
-    img: PropsType.string
-  })
+  title: PropsType.string,
+  img: PropsType.string
 };
 
 export default DataMovie;
