@@ -7,8 +7,7 @@ import { AppContext } from "../../App";
 class MovieItem extends Component {
   render() {
     const { id, title, imgUrl, year } = this.props;
-    return (
-      
+    return (      
         <div className="container-movieItem" key={id}>
         <h1 className="title-movie">{title}</h1>
         <img src={imgUrl} alt="imagen" />

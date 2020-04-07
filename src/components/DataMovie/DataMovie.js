@@ -3,7 +3,7 @@ import PropsType, { checkPropTypes } from "prop-types";
 import "./DataMovie.css";
 import { containerInformation } from "../../utils/containerInformation";
 import ReactLoading from "react-loading";
-import { AppContext, checkedMovie, MyContext } from "../../App";
+import { AppContext, MyContext } from "../../App";
 import MovieItem from "../MovieItem";
 import { FaBuromobelexperte } from "react-icons/fa";
 
@@ -16,7 +16,7 @@ export default class DataMovie extends Component {
     runtime: "",
     error: "",
     loading: true,
-    check: false,
+    check: AppContext.checkboxValue,
   };
 
   componentDidMount() {
@@ -30,7 +30,6 @@ export default class DataMovie extends Component {
           runtime: jsonInfo.Runtime,
           year: jsonInfo.Year,
           error: "",
-          check: true,
           loading: true,
         });
       })
@@ -43,9 +42,12 @@ export default class DataMovie extends Component {
   }
   handleChange = () => {
     this.setState({ check: !this.state.check });
+    console.log(this.state.check ,"otro")
   };
 
   searchSelections = (value, title) => {
+    // console.log("ESTE ES SELECCION: ",value.selectionMovie)
+    console.log(value.selectionMovie)
     if (value.selectionMovie) {
       value.selectionMovie.map((data) => {
         if (data[0].title === title) {
@@ -57,10 +59,10 @@ export default class DataMovie extends Component {
       });
     }
   };
-
+  
   removeSelections = (arr, title) => {
-    arr && arr.splice(arr.indexOf(title), 1);
-  };
+  arr && arr.splice( arr.indexOf(title), 1);
+  }
 
   render() {
     const { title, img, year } = this.props;
@@ -86,7 +88,7 @@ export default class DataMovie extends Component {
       <AppContext>
         {(value) => (
           this.searchSelections(value, title),
-          (
+          
             <div className="info-movie">
               <h1 className="title-movie">{title}</h1>
               <div className="general-data-movie">
@@ -124,16 +126,16 @@ export default class DataMovie extends Component {
 
                     {pruebaArray.push(pruebaObj, this.state.check || false)}
 
-                    {this.state.check
+                      {this.state.check
                       ? value.selectionMovie.push(pruebaArray)
-                      : this.verificar(value.selectionMovie, title)}
-                    {console.log(pruebaArray, "este es el array")}
+                      : this.removeSelections(value.selectionMovie, title)}
+                      {console.log(pruebaArray, "este es el array")}
+                    {/* {console.log(value.selectionMovie)} */}
                     <label>Agregar a favorito</label>
                   </div>
                 </div>
               </div>
             </div>
-          )
         )}
       </AppContext>
     );

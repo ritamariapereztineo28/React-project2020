@@ -49,7 +49,8 @@ class Home extends React.Component {
                 state: {
                   title: movie.Title,
                   img: movie.Poster,
-                  year: movie.Year
+                  year: movie.Year,
+                  
                 }
               }}
             >
