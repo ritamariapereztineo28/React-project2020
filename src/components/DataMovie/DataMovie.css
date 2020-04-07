@@ -17,6 +17,21 @@
   margin-left: 40%;
 }
 
+.check {
+  width: 30%;
+  height: 2em;
+}
+
+.add-fav{
+  width: 100%;
+  font-size: 1.1em;
+  border-radius: 0.5em;
+  margin: auto;
+  padding: 0.2em;
+  border: none;
+  background-color: #a4c1ff;
+  justify-content: center;
+}
 .info-movie .title-movie {
   text-align: center;
   font-size: 5em;
@@ -80,11 +95,5 @@
   padding-right: 1em;
   padding-bottom: 2em;
   font-size: 1.5em;
-  transition: all;
-  transition-duration: 1s;
   color: #000;
-}
-
-.data-movie:hover {
-  width: 40%;
 }

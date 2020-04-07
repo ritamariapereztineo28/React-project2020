@@ -3,11 +3,24 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 //Component
 import Routes from "./components/Router/Router";
-function App() {
+
+export const MyContext = React.createContext({
+  checkboxValue: false,
+  selectionMovie:[],
+});
+
+export default function App() {
   return (
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
+    <MyContext.Provider
+      value={{
+        checkboxValue: false,
+        selectionMovie: [],
+      }}
+    >
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
+    </MyContext.Provider>
   );
 }
-export default App;
+export const AppContext = MyContext.Consumer;

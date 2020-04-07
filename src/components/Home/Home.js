@@ -4,6 +4,7 @@ import { containerInformation } from "../../utils/containerInformation";
 import MovieItem from "../MovieItem";
 import Search from "../Search";
 import "./Home.css";
+
 class Home extends React.Component {
   state = {
     results: [],
@@ -35,6 +36,9 @@ class Home extends React.Component {
       <h1 className="message-error">{error}</h1>
     ) : (
       <div>
+        <Link to="/selectionmovie">
+          <button className="btn-selections"> Ir a favoritos </button>
+        </Link>
         <Search searchInfo={this.searchInformation} />
         <div className="content-movie">
           {results.map(movie => (
@@ -44,7 +48,8 @@ class Home extends React.Component {
                 pathname: "/datamovie",
                 state: {
                   title: movie.Title,
-                  img: movie.Poster
+                  img: movie.Poster,
+                  year: movie.Year
                 }
               }}
             >
