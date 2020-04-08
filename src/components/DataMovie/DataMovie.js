@@ -16,7 +16,7 @@ export default class DataMovie extends Component {
     runtime: "",
     error: "",
     loading: true,
-    check: AppContext.checkboxValue,
+    check:false,
   };
 
   componentDidMount() {
@@ -40,9 +40,8 @@ export default class DataMovie extends Component {
         });
       });
   }
-  handleChange = () => {
-    this.setState({ check: !this.state.check });
-    console.log(this.state.check ,"otro")
+  handleChange = (e) => {
+    this.setState({ check: e.target.checked });
   };
 
   searchSelections = (value, title) => {
