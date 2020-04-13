@@ -3,26 +3,25 @@ import { AppContext } from "../../App";
 import "./SelectionMovie.css";
 import DataMovie from "../DataMovie/DataMovie";
 import MovieItem from "../MovieItem/MovieItem";
+import UserContext from "../../UserContext";
 
 class SelectionMovie extends Component {
-  state={
-    
-  }
+  static contextType = UserContext;
+
   render() {
+    const { selectionsMovies, setUser } = this.context;
     return (
-      <AppContext>
-        {(value) => (
-          <div className="selections-favorite-movie">
-            {value.selectionMovie.map((data) => (
-              <MovieItem 
-              title={data[0].title}
-              imgUrl={data[0].image}
-              year={data[0].year}
+      <div className="selections-favorite-movie">
+        {selectionsMovies.movie
+          ? selectionsMovies.movie.map(data => (
+              <MovieItem
+                title={data[0].title}
+                imgUrl={data[0].image}
+                year={data[0].year}
               />
-            ))}
-          </div>
-        )}
-      </AppContext>
+            ))
+          : null}
+      </div>
     );
   }
 }
