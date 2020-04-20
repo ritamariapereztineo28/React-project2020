@@ -5,7 +5,13 @@ const MovieContext = React.createContext()
 class MovieProvider extends Component {
   state = {
     selectionsMovies:{},
+    // check: false
   }
+//   checkValue(){
+//       this.setState({
+//           check:!this.state.check
+//       })
+//   }
 
   setMovie = selectionsMovies => {
     this.setState(prevState =>  ({ selectionsMovies }))

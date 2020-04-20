@@ -5,13 +5,13 @@ import { FaSearch } from "react-icons/fa";
 
 class Search extends Component {
   state = {
-    title: "",
+    title: ""
   };
 
-  handlerInput = (event) => {
+  handlerInput = event => {
     const { value } = event.target;
     this.setState({
-      title: value,
+      title: value
     });
   };
 
@@ -40,7 +40,7 @@ class Search extends Component {
 }
 
 Search.propTypes = {
-  searchInfo: PropTypes.func,
+  searchInfo: PropTypes.func
 };
 
 export default Search;
