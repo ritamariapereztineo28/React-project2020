@@ -6,7 +6,7 @@ import ReactLoading from "react-loading";
 import { AppContext, MyContext } from "../../App";
 import MovieItem from "../MovieItem";
 import { FaBuromobelexperte } from "react-icons/fa";
-import UserContext from "../../UserContext";
+import UserContext from "../../MovieContext";
 
 export default class DataMovie extends Component {
   static contextType = UserContext;
@@ -19,7 +19,7 @@ export default class DataMovie extends Component {
     runtime: "",
     error: "",
     loading: true,
-    check: true
+    check: false
   };
 
   componentDidMount() {
@@ -43,7 +43,7 @@ export default class DataMovie extends Component {
         });
       });
   }
-  // handleChange = e => {
+  // checkValue = e => {
   //   this.setState({ check: e.target.checked });
   // };
 
@@ -65,16 +65,17 @@ export default class DataMovie extends Component {
       });
     }
   };
+  
   render() {
     const { title, img, year } = this.props;
-    const pruebaArray = [];
-    const pruebaObj = {
+    const moviesArray = [];
+    const  moviesObj= {
       title: title,
       image: img,
       year: year,
       check: this.state.check
     };
-    const { selectionsMovies, setUser } = this.context;
+    const { selectionsMovies, setMovie } = this.context;
 
     const { loading, error } = this.state;
     if (!loading) {
@@ -120,7 +121,7 @@ export default class DataMovie extends Component {
                     check: this.state.check
                   };
 
-                  setUser(selectionsMovies);
+                  setMovie(selectionsMovies);
                   this.checkValue(selectionsMovies.check);
                 }}
                 type="checkbox"
@@ -128,10 +129,10 @@ export default class DataMovie extends Component {
               />
               {this.searchSelections(selectionsMovies, title)}
 
-              {pruebaArray.push(pruebaObj)}
+              {moviesArray.push(moviesObj)}
 
               {selectionsMovies.check
-                ? selectionsMovies.movie.push(pruebaArray)
+                ? selectionsMovies.movie.push(moviesArray)
                 : console.log("CHECK ES FALSO")}
             </div>
           </div>

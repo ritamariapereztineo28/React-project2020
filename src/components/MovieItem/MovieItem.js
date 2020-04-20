@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import "./MovieItem.css";
 import DataMovie from "../DataMovie/DataMovie";
 import { AppContext } from "../../App";
+import Webcam from "react-webcam";
 
 class MovieItem extends Component {
   render() {

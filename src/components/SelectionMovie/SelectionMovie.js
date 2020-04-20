@@ -3,13 +3,13 @@ import { AppContext } from "../../App";
 import "./SelectionMovie.css";
 import DataMovie from "../DataMovie/DataMovie";
 import MovieItem from "../MovieItem/MovieItem";
-import UserContext from "../../UserContext";
+import UserContext from "../../MovieContext";
 
 class SelectionMovie extends Component {
   static contextType = UserContext;
 
   render() {
-    const { selectionsMovies, setUser } = this.context;
+    const { selectionsMovies } = this.context;
     return (
       <div className="selections-favorite-movie">
         {selectionsMovies.movie

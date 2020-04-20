@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 
-const UserContext = React.createContext()
+const MovieContext = React.createContext()
 
-class UserProvider extends Component {
-  // Context state
+class MovieProvider extends Component {
   state = {
     selectionsMovies:{},
     // check: false
@@ -13,29 +12,29 @@ class UserProvider extends Component {
 //           check:!this.state.check
 //       })
 //   }
-  // Method to update state
-  setUser = selectionsMovies => {
+
+  setMovie = selectionsMovies => {
     this.setState(prevState =>  ({ selectionsMovies }))
   }
 
   render() {
     const { children } = this.props
     const { selectionsMovies } = this.state
-    const { setUser} = this
+    const { setMovie} = this
 
     return (
-      <UserContext.Provider
+      <MovieContext.Provider
         value={{
         selectionsMovies,
-        setUser,
+        setMovie,
         }}
       >
         {children}
-      </UserContext.Provider>
+      </MovieContext.Provider>
     )
   }
 }
 
-export default UserContext
+export default MovieContext
 
-export { UserProvider }
+export { MovieProvider }
