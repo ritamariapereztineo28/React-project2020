@@ -8,25 +8,26 @@ import "./Home.css";
 class Home extends React.Component {
   state = {
     results: [],
-    error: ""
+    error: "",
   };
-  searchInformation = search =>
+  
+  searchInformation = (search) =>
     containerInformation(search, "s")
-      .then(jsonInfo => {
+      .then((jsonInfo) => {
         if (jsonInfo.Search.length === 0) {
           this.setState({
-            error: "No se ha encontrado ningun resultados"
+            error: "No se ha encontrado ningun resultados",
           });
           return;
         }
         this.setState({
           results: jsonInfo.Search,
-          error: ""
+          error: "",
         });
       })
-      .catch(e => {
+      .catch((e) => {
         this.setState({
-          error: e.message
+          error: e.message,
         });
       });
 
@@ -41,7 +42,7 @@ class Home extends React.Component {
         </Link>
         <Search searchInfo={this.searchInformation} />
         <div className="content-movie">
-          {results.map(movie => (
+          {results.map((movie) => (
             <Link
               key={movie.imdbID}
               to={{
@@ -50,8 +51,7 @@ class Home extends React.Component {
                   title: movie.Title,
                   img: movie.Poster,
                   year: movie.Year,
-                  
-                }
+                },
               }}
             >
               <MovieItem

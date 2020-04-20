@@ -8,13 +8,13 @@ import Webcam from "react-webcam";
 class MovieItem extends Component {
   render() {
     const { id, title, imgUrl, year } = this.props;
-    return (      
-        <div className="container-movieItem" key={id}>
+    return (
+      <div className="container-movieItem" key={id}>
         <h1 className="title-movie">{title}</h1>
         <img src={imgUrl} alt="imagen" />
         <h2 className="year">{year}</h2>
       </div>
-      );
+    );
   }
 }
 

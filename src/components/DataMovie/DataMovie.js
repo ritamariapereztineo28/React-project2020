@@ -132,7 +132,7 @@ export default class DataMovie extends Component {
               {moviesArray.push(moviesObj)}
 
               {selectionsMovies.check
-                ? selectionsMovies.movie.push(moviesArray)
+                ? console.log("CHECK ES VERDADERO")
                 : console.log("CHECK ES FALSO")}
             </div>
           </div>
