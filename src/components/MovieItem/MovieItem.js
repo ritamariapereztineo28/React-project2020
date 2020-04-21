@@ -8,38 +8,33 @@ const MovieItem = (movie) => {
   const movieContext = useContext(MoviesContext);
 
   const markAsFavorite = () => {
-    movieContext.setFavoriteMovies(movie)
+    movieContext.setFavoriteMovies(movie);
     // console.log(movieContext.favoriteMovies);
-
   };
   const { id, title, imgUrl, year } = movie;
   const isFavorite = movieContext.isFavoriteMovie(movie.id);
-  console.log("este es isFavorite: ", isFavorite)
+  console.log("este es isFavorite: ", isFavorite);
   return (
     <>
-    <Link
-      key={id}
-      to={{
-        pathname: "/datamovie",
-        state: {
-          title: title,
-          img: imgUrl,
-        },
-      }}
-    >
-      <div className="container-movieItem" key={id}>
-        <span>{id}</span>
-        <h1 className="title-movie">{title}</h1>
-        <img src={imgUrl} alt="imagen" />
-        <h2 className="year">{year}</h2>
-        
-      </div>
-    </Link>
-    <input
-    type="checkbox"
-    checked={isFavorite}
-    onChange={markAsFavorite}
-  /></>
+      <Link
+        key={id}
+        to={{
+          pathname: "/datamovie",
+          state: {
+            title: title,
+            img: imgUrl,
+          },
+        }}
+      >
+        <div className="container-movieItem" key={id}>
+          <span>{id}</span>
+          <h1 className="title-movie">{title}</h1>
+          <img src={imgUrl} alt="imagen" />
+          <h2 className="year">{year}</h2>
+        </div>
+      </Link>
+      <input type="checkbox" checked={isFavorite} onChange={markAsFavorite} />
+    </>
   );
 };
 
