@@ -38,22 +38,13 @@ class Home extends React.Component {
         <Search searchInfo={this.searchInformation} />
         <div className="content-movie">
           {results.map(movie => (
-            <Link
-              key={movie.imdbID}
-              to={{
-                pathname: "/datamovie",
-                state: {
-                  title: movie.Title,
-                  img: movie.Poster
-                }
-              }}
-            >
+           
               <MovieItem
+                id={movie.imdbID}
                 title={movie.Title}
                 year={movie.Year}
                 imgUrl={movie.Poster}
               />
-            </Link>
           ))}
         </div>
       </div>
