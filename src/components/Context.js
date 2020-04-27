@@ -12,9 +12,8 @@ class MoviesProvider extends Component {
     this.setState({ favoriteMovies });
   };
 
-  isFavoriteMovie = (movieId) => {
-    //   console.log(this.state.favoriteMovies)
-    return this.state.favoriteMovies.some((m) => m.id === movieId);
+  isFavoriteMovie = (movieTitle) => {
+    return this.state.favoriteMovies.some((m) => m.title === movieTitle);
   };
 
   render() {

@@ -7,25 +7,25 @@ import "./Home.css";
 class Home extends React.Component {
   state = {
     results: [],
-    error: ""
+    error: "",
   };
-  searchInformation = search =>
+  searchInformation = (search) =>
     containerInformation(search, "s")
-      .then(jsonInfo => {
+      .then((jsonInfo) => {
         if (jsonInfo.Search.length === 0) {
           this.setState({
-            error: "No se ha encontrado ningun resultados"
+            error: "No se ha encontrado ningun resultados",
           });
           return;
         }
         this.setState({
           results: jsonInfo.Search,
-          error: ""
+          error: "",
         });
       })
-      .catch(e => {
+      .catch((e) => {
         this.setState({
-          error: e.message
+          error: e.message,
         });
       });
 
@@ -35,16 +35,18 @@ class Home extends React.Component {
       <h1 className="message-error">{error}</h1>
     ) : (
       <div>
+        <Link to="/favoritemovie">
+          <button> Ir a favoritos </button>
+        </Link>
         <Search searchInfo={this.searchInformation} />
         <div className="content-movie">
-          {results.map(movie => (
-           
-              <MovieItem
-                id={movie.imdbID}
-                title={movie.Title}
-                year={movie.Year}
-                imgUrl={movie.Poster}
-              />
+          {results.map((movie) => (
+            <MovieItem
+              id={movie.imdbID}
+              title={movie.Title}
+              year={movie.Year}
+              imgUrl={movie.Poster}
+            />
           ))}
         </div>
       </div>

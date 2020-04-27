@@ -1,4 +1,4 @@
-import React, { Component, useContext } from "react";
+import React, { Component, useContext, useState } from "react";
 import PropTypes, { checkPropTypes } from "prop-types";
 import "./MovieItem.css";
 import MoviesContext from "../Context";
@@ -6,14 +6,30 @@ import { Link } from "react-router-dom";
 
 const MovieItem = (movie) => {
   const movieContext = useContext(MoviesContext);
+  const [isFavorite, setFavorite] = useState(
+    movieContext.isFavoriteMovie(movie.title)
+  );
 
-  const markAsFavorite = () => {
-    movieContext.setFavoriteMovies(movie);
-    // console.log(movieContext.favoriteMovies);
+  const markAsFavorite = async (e) => {
+    let i = -1;
+    if (movieContext.isFavoriteMovie(movie.title)) {
+      movieContext.favoriteMovies.find((m, index) => {
+        if (m.title === movie.title) {
+          i = index;
+        }
+      });
+
+      if (i > -1) {
+        await movieContext.favoriteMovies.splice(i, 1);
+        setFavorite(false);
+      }
+    } else {
+      movieContext.setFavoriteMovies(movie);
+      setFavorite(true);
+    }
   };
+
   const { id, title, imgUrl, year } = movie;
-  const isFavorite = movieContext.isFavoriteMovie(movie.id);
-  console.log("este es isFavorite: ", isFavorite);
   return (
     <>
       <Link
@@ -27,7 +43,6 @@ const MovieItem = (movie) => {
         }}
       >
         <div className="container-movieItem" key={id}>
-          <span>{id}</span>
           <h1 className="title-movie">{title}</h1>
           <img src={imgUrl} alt="imagen" />
           <h2 className="year">{year}</h2>
