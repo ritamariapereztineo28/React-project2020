@@ -4,7 +4,7 @@ import "./MovieItem.css";
 
 class MovieItem extends Component {
   render() {
-    const { id, title, imgUrl, year} = this.props;
+    const { id, title, imgUrl, year } = this.props;
     return (
       <div className="container-movieItem" key={id}>
         <h1 className="title-movie">{title}</h1>
@@ -19,7 +19,7 @@ MovieItem.propTypes = {
   id: PropTypes.number,
   title: PropTypes.string,
   year: PropTypes.string,
-  imgUrl: PropTypes.any.isRequired
+  imgUrl: PropTypes.any.isRequired,
 };
 
 export default MovieItem;

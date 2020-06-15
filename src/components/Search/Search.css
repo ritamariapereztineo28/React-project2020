@@ -1,8 +1,17 @@
 .search-movie {
-  display: block;
+  display: flex;
+  justify-content: center;
+  text-align: center;
   margin: auto;
-  margin-left: 35%;
-  margin-top: 5%;
+  margin-top: 10%;
+}
+
+@media (max-width: 500px) {
+  .search-movie {
+    margin-top: 20%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 }
 
 .search-movie .input-search {
